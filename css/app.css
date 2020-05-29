@@ -1,0 +1,49 @@
+.navbar-img{
+    flex: 1 0 124px; 
+    text-align: center;
+    padding: 20px 60px 10px;
+}
+.navbar-description{
+    flex: 1 1 auto;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.navbar-contacts{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.navbar-contacts  a{
+    padding: 0px 7px;
+}
+.table-of-contents a:hover{
+    border-left: none;
+    border-bottom: 1px solid #ee6e73;
+}
+.table-of-contents a.active{
+    border-left: none;
+    border-bottom: 1px solid #ee6e73;
+}
+
+.profile-img{
+    width: 100%;
+    padding: 20px 60px 10px;
+}
+.invisible {
+    visibility: hidden;
+}
+
+.good-toast {
+    background-color: #43a047;
+
+}
+.wrong-toast {
+    background-color: #e53935;
+    
+}
