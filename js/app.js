@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var observer = new IntersectionObserver((entries)=>{
       entries.forEach((entry)=>{
           
-          if ( entry.target.id > 1 && Math.floor(entry.intersectionRatio * 100) > 20){
+          if ( entry.target.id > 1 && Math.floor(entry.intersectionRatio * 100) > 10){
             entry.target.classList.remove("invisible")
             entry.target.classList.add("animated")
             entry.target.classList.add("fadeInLeft")

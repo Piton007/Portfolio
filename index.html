@@ -16,12 +16,12 @@
     <title>Portfolio</title>
 </head>
 
-<body>
+<body >
     <div class="navbar-fixed">
         <nav class="nav-wrapper blue-grey darken-4">
 
 
-            <span style="font-size: 20px;margin-left: 1rem; line-height: 2;">
+            <span class="notranslate" style="font-size: 20px;margin-left: 1rem; line-height: 2;">
                 Jose Luis
             </span>
             <ul class="table-of-contents hide-on-med-and-down" style="list-style: none;float: right;">
@@ -30,6 +30,9 @@
                 </li>
                 <li style="float: left;padding: 0px 10px;">
                     <a href="#2" class="white-text">Skills</a>
+                </li>
+                <li style="float: left;padding: 0px 10px;">
+                    <a href="#3" class="white-text">Contact</a>
                 </li>
 
             </ul>
@@ -44,7 +47,7 @@
         <li>
             <div style="display: flex;flex-direction: column;">
                 <div class="navbar-img">
-                    <img src="https://hencework.com/theme/matresume/img/client3.png" alt="" class="responsive-img">
+                    <img src="./file/original.jpg" alt="" class="circle responsive-img">
                 </div>
                 <div class="white-text navbar-description">
                     <span>jose luis</span>
@@ -58,10 +61,10 @@
 
         </li>
         <li class="sidenav-close" style="border-bottom: 1px solid  #263238; background-color: #37474f4f"><a href="#1"
-                class="white-text"><i class="material-icons white-text">person</i>Perfil </a></li>
+                class="white-text"><i class="material-icons white-text" translate="no">person</i>Perfil </a></li>
 
         <li class="sidenav-close" style="border-bottom: 1px solid  #263238; background-color: #37474f4f"><a href="#2"
-                class="white-text"><i class="material-icons white-text">brush</i>Skills</a></li>
+                class="white-text"><i class="material-icons white-text" translate="no">brush</i>Skills</a></li>
        <li class="sidenav-close" style="border-bottom: 1px solid  #263238; background-color: #37474f4f;"><a href="#3" class="white-text"><i class="material-icons white-text">contact_mail</i>Contact</a></li>
 
 
@@ -80,18 +83,21 @@
                             <div class="row">
                                 <div class="col m6 s12">
                                     <div class="navbar-img">
-                                        <img src="https://hencework.com/theme/matresume/img/client3.png" alt=""
+                                        <img  src="./file/original.jpg" alt=""
                                             class="responsive-img">
                                     </div>
-                                    <div class="card-content white-text">
+                                    <a target="_blank" href="https://github.com/Piton007?tab=repositories">
+                                        <i class="fab fa-github white-text" style="font-size: 2.5rem;"></i>
+                                    </a>
+                                </div>
+                                <div class="col m6 s12">
+                                    <div class="card-content white-text" style="padding: 20px 0px 10px 0px;">
                                         <span style="font-size: 2rem;" class="card-title">Jose Luis Morales</span>
                                         <h5 style="text-transform:uppercase;font-size: 1rem;">
                                             Junior Full Stack Developer
                                         </h5>
                                     </div>
-                                </div>
-                                <div class="col m6 s12">
-                                    <ul style="padding-top: 20px;">
+                                    <ul >
                                         <li style="margin-bottom: 10px;">
                                             <div style="text-align: left" class="white-text">Edad</div>
                                             <div style="text-align: left;color: #bdbdbd ;">20</div>
@@ -139,7 +145,7 @@
                                 <span class="card-title">Skills</span>
                                 <ul>
                                     <li>
-                                        <div style="margin-bottom:10px;line-height: 1rem;">Front End</div>
+                                        <div style="margin-bottom:10px;line-height: 1rem;">Front-End</div>
 
                                         <div class="progress blue darken-2">
                                             <div class="determinate blue darken-4" style="width: 70%"></div>
@@ -224,22 +230,22 @@
                                     <div   class="col m12 s12">
                                         <span class="card-title">Contact</span>
                                       <div class="row" >
-                                        <div class="input-field col m12 sm12">
-                                          <i class="material-icons prefix">account_circle</i>
+                                        <div class="input-field col m12 s12">
+                                          <i class="material-icons notranslate prefix" >account_circle</i>
                                           <input id="email_subject" type="text" required class="validate">
-                                          <label for="email_subject">Nombre</label>
+                                          <label for="email_subject">Name</label>
                                           <span class="helper-text" data-error="Ingrese su nombre" ></span>
                                         </div>
-                                        <div class="input-field col m12">
-                                          <i class="material-icons prefix">contact_mail</i>
+                                        <div class="input-field col s12 m12">
+                                          <i class="material-icons prefix notranslate">contact_mail</i>
                                           <input id="email_address"  type="email"  class="validate">
                                           <label for="email_address">Email</label>
                                           <span class="helper-text" data-error="Ingrese un correo valido" ></span>
                                         </div>
                                         <div class="input-field col s12 m12">
-                                            <i class="material-icons prefix">message</i>
+                                            <i class="material-icons notranslate prefix" >message</i>
                                             <textarea id="email_message" required class="materialize-textarea "></textarea>
-                                            <label for="email_message">Mensaje</label>
+                                            <label for="email_message">Message</label>
                                             <span class="helper-text" data-error="Ingrese un mensaje" ></span>
                                           </div>
                                       </div>
