@@ -1,8 +1,8 @@
 
-
-
-
-
+import "../sass/main.scss"
+import "../file/cv.pdf"
+import "../file/original.jpg"
+import "./materialize.min.js"
 
 document.addEventListener('DOMContentLoaded', function() {
 

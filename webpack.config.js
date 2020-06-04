@@ -1,36 +1,31 @@
-
-
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const autoprefixer = require('autoprefixer');
 module.exports = [{
-    entry: ['./app.scss', './app.js'],
+    entry: ['./js/app.js'],
     output: {
-      filename: './bundle.js',
+      path: path.resolve(__dirname, './dist'),
+      filename: 'js/bundle.js'
     },
     module: {
       rules: [
         {
-          test: /\.scss$/,
+          test: /\.(sa|sc|c)ss$/,
           use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: 'bundle.css',
-              },
-            },
-            { loader: 'extract-loader' },
-            { loader: 'css-loader' },
-            {
-              loader: 'sass-loader',
-              options: {
-                // Prefer Dart Sass
-                sassOptions: {
-                    includePaths: ['./node_modules']
-                  },
-                implementation: require('sass'),
-  
-                // See https://github.com/webpack-contrib/sass-loader/issues/804
-                webpackImporter: false,
-              },
-            },
+            MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            autoprefixer: {
+                                browser: ["last 2 versions"]
+                            },
+                            plugins: () => [
+                                autoprefixer
+                            ]
+                        }
+                    },
+                    'sass-loader',
           ]
         },
         {
@@ -39,7 +34,20 @@ module.exports = [{
         query: {
           presets: ['@babel/preset-env'],
         },
+        },
+        {
+          test: /\.(png|jpe?g|gif|pdf)$/i,
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+          },
         }
       ]
     },
+    plugins:[
+      new MiniCssExtractPlugin({
+        filename: "css/[name]-styles.css",
+        chunkFilename: "[id].css"
+    })
+    ]
   }];
