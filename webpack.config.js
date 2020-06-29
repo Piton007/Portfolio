@@ -1,11 +1,17 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MinifyPlugin = require('babel-minify-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 module.exports = [{
     entry: ['./js/app.js'],
     output: {
       path: path.resolve(__dirname, './dist'),
       filename: 'js/bundle.js'
+    },
+    devServer: {
+      contentBase: path.join(__dirname, 'dist'),
+      compress: true,
+      port: 8000
     },
     module: {
       rules: [
@@ -48,6 +54,7 @@ module.exports = [{
       new MiniCssExtractPlugin({
         filename: "css/[name]-styles.css",
         chunkFilename: "[id].css"
-    })
+    }),
+    new MinifyPlugin()
     ]
   }];

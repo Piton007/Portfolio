@@ -3,6 +3,8 @@ import "../sass/main.scss"
 import "../file/cv.pdf"
 import "../file/original.jpg"
 import "./materialize.min.js"
+import "../file/eventSoft.png"
+import "../file/kinesya.png"
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -13,23 +15,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const subjectNode = document.getElementById("email_subject")
     const messageNode = document.getElementById("email_message")
     const sendBtnNode = document.getElementById("send")
+    const sliderContain = $(".slider-contain")
+    sliderContain.on("mouseenter",showSliderInfo)
+    sliderContain.on("mouseleave",hideSliderInfo)
+
+   
+    function showSliderInfo(){
+      console.log("hey")
+      sliderContain.prop("classList").remove("invisible")
+    }
+    function hideSliderInfo(){
+      sliderContain.prop("classList").add("invisible")
+    }
 
     function sendEmail() {
-      
-    
-      Email.send({
-        SecureToken : "cd6ff455-9bf1-4109-90f0-7e24530a9a64",
-        To : 'JoseMoWa@gmail.com',
-        From : email,
-        Subject : subject,
-        Body : message
-      }).then(
-      ()=>{
-        M.toast({html: 'Enviado Satisfactoriamente',classes:"good-toast"})
+      if (emailNode.classList.contains("invalid") && subjectNode.classList.contains("invalid") && messageNode.classList.contains("invalid") || !validateFieldsValue() )
+        M.toast({html: 'Complete los campos',classes:"wrong-toast"})
+      else{
+        Email.send({
+          SecureToken : "cd6ff455-9bf1-4109-90f0-7e24530a9a64",
+          To : 'JoseMoWa@gmail.com',
+          From : email,
+          Subject : subject,
+          Body : message
+        }).then(
+        ()=>{
+          M.toast({html: 'Enviado Satisfactoriamente',classes:"good-toast"})
+        }
+      ).catch(()=>{
+        M.toast({html: 'No se puedo enviar su mensaje',classes:"wrong-toast"})
+      }); 
       }
-    ).catch(()=>{
-      M.toast({html: 'No se puedo enviar su mensaje',classes:"wrong-toast"})
-    }); 
+      
      }
 
 
@@ -58,10 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
     sendBtnNode.addEventListener("click",()=>{sendEmail()})
     form.addEventListener("input",(event)=>{
         setFieldValues(event.target.id,event.target.value)
-      if (!emailNode.classList.contains("invalid") && !subjectNode.classList.contains("invalid") && !messageNode.classList.contains("invalid") && validateFieldsValue() )
-        sendBtnNode.classList.remove("disabled")
-      else
-        sendBtnNode.classList.add("disabled")
     })
     
 
@@ -86,10 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
             entry.target.classList.remove("invisible")
             entry.target.classList.add("animated")
             entry.target.classList.add("fadeInLeft")
-            
-            
           }
-
         
       })
     }, options);
