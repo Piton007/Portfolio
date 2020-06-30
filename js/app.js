@@ -15,17 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const subjectNode = document.getElementById("email_subject")
     const messageNode = document.getElementById("email_message")
     const sendBtnNode = document.getElementById("send")
-    const sliderContain = $(".slider-contain")
-    sliderContain.on("mouseenter",showSliderInfo)
-    sliderContain.on("mouseleave",hideSliderInfo)
-
-   
-    function showSliderInfo(){
-      sliderContain.prop("classList").remove("invisible")
-    }
-    function hideSliderInfo(){
-      sliderContain.prop("classList").add("invisible")
-    }
 
     function sendEmail() {
       if (emailNode.classList.contains("invalid") && subjectNode.classList.contains("invalid") && messageNode.classList.contains("invalid") || !validateFieldsValue() )
