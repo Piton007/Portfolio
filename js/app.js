@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
    
     function showSliderInfo(){
-      console.log("hey")
       sliderContain.prop("classList").remove("invisible")
     }
     function hideSliderInfo(){
