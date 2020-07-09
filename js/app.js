@@ -6,6 +6,7 @@ import "./materialize.min.js"
 import "../file/eventSoft.png"
 import "../file/kinesya.png"
 import "../file/background.jpg"
+import "../file/logo.jpg"
 
 document.addEventListener('DOMContentLoaded', function() {
 
