@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
+//Compatibilidad con los demas browsers
 const autoprefixer = require('autoprefixer');
 module.exports = [{
     entry: ['./js/app.js'],
