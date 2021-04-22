@@ -1,5 +1,5 @@
 
-import "../sass/main.scss"
+import "../scss/main.scss"
 import "../file/cv.pdf"
 import "../file/original.jpg"
 import "./materialize.min.js"
